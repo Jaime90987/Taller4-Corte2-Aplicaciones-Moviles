@@ -24,7 +24,7 @@ Una vez se valida el correo y la contraseña, al dar click en el botón de login
 
 Para instalar la aplicación en un emulador o dispositivo móvil físico se requiere que la versión del sistema operativo sea como mínimo las siguientes:
 
-- Versión mínima de android: 4.1
+- Versión mínima de Android: 4.1
 - Versión mínima de iOS: 8.0
 
 ---
@@ -43,7 +43,7 @@ Para utilizar esta aplicación, sigue los siguientes pasos:
 2. Alternativa
    - Si no posees un dispositivo Android, puedes utilizar un emulador. Clona este repositorio.
    - Abre la aplicación en tu IDE de preferencia.
-   - Compila la aplicación en un emulador.
+   - Compila la aplicación en un emulador. Si sale algún error no olvides poner el comando `flutter pub get` en la terminal.
 
 ---
 
