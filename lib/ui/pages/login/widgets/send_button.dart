@@ -3,7 +3,7 @@ import 'package:login_app/ui/data_arguments.dart';
 import 'package:login_app/ui/colors.dart';
 import 'package:login_app/ui/strings.dart';
 
-class SendButton extends StatefulWidget {
+class SendButton extends StatelessWidget {
   final GlobalKey<FormState> formKey;
   final TextEditingController emailController;
   final TextEditingController passwordController;
@@ -19,27 +19,22 @@ class SendButton extends StatefulWidget {
   });
 
   @override
-  State<SendButton> createState() => _SendButtonState();
-}
-
-class _SendButtonState extends State<SendButton> {
-  @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        if (widget.formKey.currentState!.validate()) {
+        if (formKey.currentState!.validate()) {
           Navigator.pushNamed(
             context,
             targetPage,
             arguments: DataArguments(
-              widget.emailController.text,
-              widget.passwordController.text,
-              widget.country,
-              widget.phoneNumber,
+              emailController.text,
+              passwordController.text,
+              country,
+              phoneNumber,
             ),
           );
-          widget.emailController.text = "";
-          widget.passwordController.text = "";
+          emailController.text = "";
+          passwordController.text = "";
         }
       },
       style: ElevatedButton.styleFrom(

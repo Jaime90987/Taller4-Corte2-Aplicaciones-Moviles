@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/ui/colors.dart';
 
-class InputGeneric extends StatefulWidget {
+class InputGeneric extends StatelessWidget {
   final TextEditingController controller;
   final String labelText;
   final Widget prefixIcon;
@@ -13,18 +13,13 @@ class InputGeneric extends StatefulWidget {
   });
 
   @override
-  State<InputGeneric> createState() => _InputGenericState();
-}
-
-class _InputGenericState extends State<InputGeneric> {
-  @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: widget.controller,
+      controller: controller,
       keyboardType: TextInputType.emailAddress,
       readOnly: true,
       decoration: InputDecoration(
-        labelText: widget.labelText,
+        labelText: labelText,
         labelStyle: const TextStyle(color: colorInputLabelAndIcon),
         filled: true,
         fillColor: colorInputFill,
@@ -45,7 +40,7 @@ class _InputGenericState extends State<InputGeneric> {
           borderSide: BorderSide(color: Colors.red),
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
-        prefixIcon: widget.prefixIcon,
+        prefixIcon: prefixIcon,
         prefixIconColor: colorInputLabelAndIcon,
       ),
     );
